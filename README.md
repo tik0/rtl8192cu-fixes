@@ -1,9 +1,18 @@
+!!Installation Manual for AMiRo!!
+=================================
+
+For new deployments, the driver is already installed, but update the already running robots, do the following:
+
+1. For AMiRo build with Yocto 1.7.3 with Linux 3.19.0 [this binary module](binaries/8192cu.ko) can be copied to the AMiRo `scp 8192cu.ko root@${AMIRO_IP}:/lib/modules/3.19.0-yocto-standard/extra/`
+2. Disable the old driver by adding them to the blacklist: `echo -e "blacklist rtlwifi\nblacklist rtl_usb\nblacklist rtl8192c_common\nblacklist rtl8192cu\n" >> /etc/modprobe.d/blacklist.conf`
+
+
+Further Information from Original Repo
+======================================
+
 [![Build Status](https://travis-ci.org/pvaret/rtl8192cu-fixes.svg?branch=master)](https://travis-ci.org/pvaret/rtl8192cu-fixes)
 
 This is a repackaging of Realtek's own 8192CU USB WiFi driver for Ubuntu 13.10 and later.
-
-!! This driver is DEPRECATED !!
-===============================
 
 This driver is not explicitly maintained.
 
