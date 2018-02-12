@@ -6,6 +6,7 @@ For new deployments, the driver is already installed, but update the already run
 1. For AMiRo build with Yocto 1.7.3 and Linux 3.19.0 [this binary module](binaries/8192cu.ko) can be copied to the AMiRo: `scp 8192cu.ko root@${AMIRO_IP}:/lib/modules/3.19.0-yocto-standard/extra/`
 2. Disable the old driver by adding them to the blacklist on AMiRO: `echo -e "blacklist rtlwifi\nblacklist rtl_usb\nblacklist rtl8192c_common\nblacklist rtl8192cu\n" >> /etc/modprobe.d/blacklist.conf`
 3. Update the available modules on AMiRo: `depmod -a`
+4. `reboot`
 
 
 Further Information from Original Repo
